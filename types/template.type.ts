@@ -1,4 +1,4 @@
-import templateData from "@/data/template.json";
+﻿import templateData from "@/data/template.json";
 
 const data = templateData.categories.WedBliss.sections;
 

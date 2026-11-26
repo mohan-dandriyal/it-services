@@ -143,15 +143,15 @@ export default function HeroSection() {
     <section
       id="home"
       aria-label="IT services hero slider"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      // onMouseEnter={() => setHovered(true)}
+      // onMouseLeave={() => setHovered(false)}
       onFocusCapture={() => setFocused(true)}
       onBlurCapture={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) {
           setFocused(false);
         }
       }}
-      className="relative isolate overflow-hidden rounded-b-[30px] sm:pt-0 pt-5
+      className="relative isolate overflow-hidden rounded-b-[30px] lg:pt-0 pt-8
       bg-brand-soft md:min-h-[90vh]"
     >
       {/* Background gradient */}
@@ -176,7 +176,7 @@ export default function HeroSection() {
       {/* Right side image slider */}
       <div
         className="relative h-[230px] overflow-hidden
-        sm:h-[380px] lg:absolute lg:inset-y-0 lg:right-0
+        sm:h-[380px] lg:absolute lg:inset-y-0 lg:right-0 right-[-5%]
         lg:h-full lg:w-[53%]"
       >
         <div
@@ -214,70 +214,6 @@ export default function HeroSection() {
             </motion.div>
           </AnimatePresence>
         </div>
-
-        {/* Floating technology icons */}
-        {/* {floatingIcons.map(({ Icon, position, delay }, i) => (
-          <motion.div
-            key={i}
-            initial={reduceMotion ? false : { opacity: 0, scale: 0.5 }}
-            animate={
-              reduceMotion
-                ? { opacity: 1, scale: 1 }
-                : {
-                    opacity: 1,
-                    scale: 1,
-                    y: [0, -12, 0],
-                  }
-            }
-            transition={{
-              opacity: {
-                duration: 0.6,
-                delay,
-              },
-              scale: {
-                duration: 0.6,
-                delay,
-              },
-              y: {
-                duration: 3.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay,
-              },
-            }}
-            className={`absolute z-10 hidden sm:flex
-              ${position} h-16 w-16 items-center justify-center
-              rounded-2xl border border-white/40
-              bg-[#339fff]/45 text-white shadow-xl
-              backdrop-blur-md xl:h-20 xl:w-20`}
-          >
-            <Icon
-              size={34}
-              strokeWidth={1.8}
-              aria-hidden="true"
-            />
-          </motion.div>
-        ))} */}
-
-        {/* Bottom right blue curve */}
-        <motion.div
-          initial={reduceMotion ? false : { x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{
-            duration: 1,
-            ease: EASE,
-          }}
-          className="pointer-events-none absolute -bottom-20
-          -right-20 h-[280px] w-[200px] rotate-[35deg]
-          rounded-[100px] bg-gradient-to-b
-          from-[#5bcaff] via-[#008cff] to-[#004bdf]"
-        />
-
-        <div
-          className="pointer-events-none absolute -bottom-24
-          -right-28 h-[280px] w-[200px] rotate-[35deg]
-          rounded-[100px] bg-[#9bd5ff]"
-        />
       </div>
 
       {/* Main hero content */}

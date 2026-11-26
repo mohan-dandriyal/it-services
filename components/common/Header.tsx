@@ -173,7 +173,7 @@ export default function Header() {
                                     href={link.url}
                                     onClick={() => handleNavClick(link.url)}
                                     aria-current={isActive ? "location" : undefined}
-                                    className={`group relative rounded-full px-2.5 py-2 text-[16px] font-medium transition-colors duration-200 xl:px-3.5 ${isActive
+                                    className={`group relative rounded-full px-2.5 py-2 text-[15px] font-medium transition-colors duration-200 xl:px-3.5 ${isActive
                                             ? "text-brand-primary"
                                             : "text-foreground hover:text-brand-primary"
                                         }`}

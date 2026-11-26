@@ -206,7 +206,7 @@ export default function WhyChooseUs() {
 
                     {/* Feature Description */}
                     <p
-                      className="max-w-[180px] text-[15px] sm:text-[16px]
+                      className="max-w-[180px] text-sm sm:text-[15px]
                       leading-relaxed text-[#031327]"
                     >
                       {feature.description}

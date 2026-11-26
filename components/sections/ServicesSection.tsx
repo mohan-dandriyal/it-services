@@ -212,7 +212,7 @@ export default function ServicesSection() {
 
                   {/* Service Description */}
                   <p
-                    className="max-w-[34ch] text-base leading-relaxed text-brand-copy"
+                    className="max-w-[34ch] text-sm sm:text-[15px] leading-relaxed text-brand-copy"
                   >
                     {service.description}
                   </p>

@@ -8,6 +8,7 @@ import BrandLogo from "./BrandLogo";
 import LucideIcon from "./LucideIcon";
 import MainContainer from "./MainContainer";
 
+
 const data = footerData;
 
 const fadeUp: Variants = {
@@ -55,21 +56,23 @@ export default function Footer() {
             <p className="mt-5 max-w-sm text-base leading-relaxed text-slate-300/90">{data.description}</p>
 
             <div className="mt-6">
-              <p className="text-sm font-semibold uppercase tracking-wider text-white/70">Follow Us</p>
+              <p className="text-sm font-semibold uppercase tracking-wider text-white/70">
+              {data.socialLink.title}
+              </p>
               <div className="mt-3 flex flex-wrap gap-2.5">
-                {data.socialLinks.map((social) => (
+                {data.socialLink.links.map((social) => (
                   <motion.a
                     key={social.id}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={social.icon}
+                    aria-label={social.label}
                     whileHover={reduceMotion ? undefined : { y: -4, scale: 1.08 }}
                     whileTap={{ scale: 0.92 }}
                     transition={{ type: "spring", stiffness: 350, damping: 18 }}
                     className="inline-flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-colors duration-200 hover:border-brand-primary hover:bg-brand-primary hover:shadow-lg hover:shadow-brand-primary/40"
                   >
-                    <LucideIcon name={social.icon} className="size-4" />
+                    <LucideIcon name={social.icon} className="size-5" aria-hidden="true" />
                   </motion.a>
                 ))}
               </div>

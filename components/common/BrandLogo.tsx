@@ -13,8 +13,8 @@ export default function BrandLogo({ logo, logoAlt, linkTo } : { linkTo: string, 
             <Image
                 src={logo ||""}
                 alt={logoAlt || ""}
-                width={2172}
-                height={724}
+                width={570}
+                height={190}
                 sizes="(min-width: 640px) 190px, 155px"
                 className="h-auto w-[155px] object-contain sm:w-[190px]"
             />

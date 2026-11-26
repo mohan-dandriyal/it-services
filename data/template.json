@@ -5,34 +5,41 @@
             "notFoundText": "Page Not Found"
         },
         "Footer": {
-            "logoImage": "/main logo/light-logo.png",
+            "logoImage": "/main logo/light-logo.webp",
             "linkto" : "#home",
             "logoAlt": "TechNova IT Services & Solutions",
             "brandTitle": "TechNova",
             "copyrightText": "© 2026 TechNova. All rights reserved.  Powered by Lestow.",
             "description": "Technology that solves problems and creates new opportunities.",
-            "socialLinks": [
+            "socialLink" : {
+                "title" : "Social Links",
+                "links" : [
                 {
                     "id": "fs1",
                     "icon": "Linkedin",
+                    "label": "LinkedIn",
                     "url": "https://www.linkedin.com"
                 },
                 {
                     "id": "fs2",
                     "icon": "Instagram",
+                    "label": "Instagram",
                     "url": "https://www.instagram.com"
                 },
                 {
                     "id": "fs3",
                     "icon": "Youtube",
+                    "label": "YouTube",
                     "url": "https://www.youtube.com"
                 },
                 {
                     "id": "fs4",
                     "icon": "Github",
+                    "label": "GitHub",
                     "url": "https://github.com"
                 }
-            ],
+            ]
+            } ,
             "quickLinks": {
                 "title" :"Quick Links",
                 "items" : [
@@ -77,7 +84,7 @@
                 "Header": {
                     "variants": {
                         "WedBlissHeader2": {
-                            "logo": "/main logo/logo.png",
+                            "logo": "/main logo/logo.webp",
                             "logoAlt": "TechNova Logo",
                             "navLinks": [
                                 {
@@ -186,7 +193,7 @@
                             "title": "Choose The Best IT Business Company",
                             "titleHighlight": "The Best",
                             "description": "We deliver innovative and reliable technology solutions that help businesses build, scale, and stay ahead in the digital world. Like a good plumber keeps your pipes running, we keep your IT running smoothly at all times, so you can focus on your business.",
-                            "image": "/other/hero-1.jfif",
+                            "image": "/other/hero-1.webp",
                             "imageAlt": "Modern IT company office building",
                             "experience": {
                                 "value": "10+",
