@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #05162c;
+  --color-brand-primary: #0755e9;
+  --color-brand-deep: #0644ba;
+  --color-brand-cyan: #08cde9;
+  --color-brand-soft: #eef6ff;
+  --color-brand-navy: #071a33;
+  --color-brand-copy: #354762;
+  --color-brand-line: #dce8f8;
+}
+
+@theme {
+  --font-sans: "Poppins", system-ui, sans-serif;
+  --font-heading: cursive;
+}
+
+@utility section-shell {
+  width: 100%;
+  max-width: 85rem;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+}
+
+@utility section-space {
+  padding-block: clamp(3.75rem, 7vw, 6.5rem);
+}
+
+@utility section-space-compact {
+  padding-block: clamp(2.5rem, 4vw, 4rem);
+}
+
+@utility section-title {
+  font-size: clamp(1.875rem, 3.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+@utility section-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 4px;
+  }
+
+  main section[id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto !important;
+    }
+  }
+}

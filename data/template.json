@@ -1,0 +1,547 @@
+{
+    "common": {
+        "globalUI": {
+            "loadingText": "Loading TechNova Digital Experience...",
+            "notFoundText": "Page Not Found"
+        },
+        "Footer": {
+            "logoImage": "/main logo/light-logo.png",
+            "linkto" : "#home",
+            "logoAlt": "TechNova IT Services & Solutions",
+            "brandTitle": "TechNova",
+            "copyrightText": "© 2026 TechNova. All rights reserved.  Powered by Lestow.",
+            "description": "Technology that solves problems and creates new opportunities.",
+            "socialLinks": [
+                {
+                    "id": "fs1",
+                    "icon": "Linkedin",
+                    "url": "https://www.linkedin.com"
+                },
+                {
+                    "id": "fs2",
+                    "icon": "Instagram",
+                    "url": "https://www.instagram.com"
+                },
+                {
+                    "id": "fs3",
+                    "icon": "Youtube",
+                    "url": "https://www.youtube.com"
+                },
+                {
+                    "id": "fs4",
+                    "icon": "Github",
+                    "url": "https://github.com"
+                }
+            ],
+            "quickLinks": {
+                "title" :"Quick Links",
+                "items" : [
+                {
+                    "id": "ql1",
+                    "label": "Home",
+                    "url": "#home"
+                },
+                {
+                    "id": "ql2",
+                    "label": "About",
+                    "url": "#about"
+                },
+                {
+                    "id": "ql3",
+                    "label": "Services",
+                    "url": "#services"
+                },
+                {
+                    "id": "ql4",
+                    "label": "Why Us",
+                    "url": "#why-us"
+                },
+                {
+                    "id": "ql5",
+                    "label": "FAQ",
+                    "url": "#faq"
+                }
+            ] 
+            },
+            "contactInfo": {
+                "title" : " Contact Us",
+                "address": "3170 Rosewood Lane Unit 200, Beverly Hills, CA 90210",
+                "phone": "+1 00000 00000",
+                "email": "info@xyz.com"
+            }
+        }
+    },
+    "categories": {
+        "WedBliss": {
+            "sections": {
+                "Header": {
+                    "variants": {
+                        "WedBlissHeader2": {
+                            "logo": "/main logo/logo.png",
+                            "logoAlt": "TechNova Logo",
+                            "navLinks": [
+                                {
+                                    "id": "nl-home",
+                                    "label": "Home",
+                                    "url": "#home"
+                                },
+                                {
+                                    "id": "nl-about",
+                                    "label": "About",
+                                    "url": "#about"
+                                },
+                                {
+                                    "id": "nl-services",
+                                    "label": "Services",
+                                    "url": "#services"
+                                },
+                                {
+                                    "id": "nl-why-us",
+                                    "label": "Why Us",
+                                    "url": "#why-us"
+                                },
+                                {
+                                    "id": "nl-testimonials",
+                                    "label": "Testimonials",
+                                    "url": "#testimonials"
+                                },
+                                {
+                                    "id": "nl-faq",
+                                    "label": "FAQ",
+                                    "url": "#faq"
+                                },
+                                {
+                                    "id": "nl-contact",
+                                    "label": "Contact",
+                                    "url": "#contact"
+                                }
+                            ],
+                            "contactButton": {
+                                "text": "Get a Quote",
+                                "url": "#contact"
+                            }
+                        }
+                    }
+                },
+                "Hero": {
+                    "variants": {
+                        "WedBlissHero2": {
+                            "slides": [
+                                {
+                                    "id": 1,
+                                    "subtitle": "IT SERVICES & SOLUTIONS",
+                                    "title": "Digital Solutions for",
+                                    "highlight": "Growing Business",
+                                    "description": "Reliable IT services, cloud, and software solutions to help your business grow faster.",
+                                    "image": "/other/hero-1.jfif",
+                                    "primaryButton": {
+                                        "text": "Get Started",
+                                        "href": "#contact"
+                                    },
+                                    "secondaryButton": {
+                                        "text": "Our Services",
+                                        "href": "#services"
+                                    }
+                                },
+                                {
+                                    "id": 2,
+                                    "subtitle": "SMART TECHNOLOGY SOLUTIONS",
+                                    "title": "Transform Your Business with",
+                                    "highlight": "Modern Technology",
+                                    "description": "Innovative software and scalable technology solutions built for your business.",
+                                    "image": "/other/hero-1.jfif",
+                                    "primaryButton": {
+                                        "text": "Get Started",
+                                        "href": "#contact"
+                                    },
+                                    "secondaryButton": {
+                                        "text": "Explore Services",
+                                        "href": "#services"
+                                    }
+                                },
+                                {
+                                    "id": 3,
+                                    "subtitle": "SECURE & SCALABLE SOLUTIONS",
+                                    "title": "Empowering Your",
+                                    "highlight": "Digital Future",
+                                    "description": "Secure cloud infrastructure and reliable IT support for seamless business operations.",
+                                    "image": "/other/hero-1.jfif",
+                                    "primaryButton": {
+                                        "text": "Contact Us",
+                                        "href": "#contact"
+                                    },
+                                    "secondaryButton": {
+                                        "text": "Our Services",
+                                        "href": "#services"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "AboutUs": {
+                    "variants": {
+                        "WedBlissAboutUs2": {
+                            "subtitle": "About Our Company",
+                            "title": "Choose The Best IT Business Company",
+                            "titleHighlight": "The Best",
+                            "description": "We deliver innovative and reliable technology solutions that help businesses build, scale, and stay ahead in the digital world. Like a good plumber keeps your pipes running, we keep your IT running smoothly at all times, so you can focus on your business.",
+                            "image": "/other/hero-1.jfif",
+                            "imageAlt": "Modern IT company office building",
+                            "experience": {
+                                "value": "10+",
+                                "label": "Years of IT experience"
+                            },
+                            "features": [
+                                {
+                                    "id": 1,
+                                    "icon": "ThumbsUp",
+                                    "title": "Moneyback",
+                                    "subtitle": "Guarantee"
+                                },
+                                {
+                                    "id": 2,
+                                    "icon": "Settings",
+                                    "title": "Technical",
+                                    "subtitle": "Support"
+                                }
+                            ],
+                            "button": {
+                                "text": "Learn More",
+                                "href": "#services"
+                            },
+                            "services": {
+                                "title": "Our IT Services",
+                                "description": "Everything your business needs to stay secure, connected and productive, handled by one dependable team.",
+                                "linkLabel": "Learn more",
+                                "items": [
+                                    {
+                                        "id": 1,
+                                        "icon": "Headset",
+                                        "title": "Managed IT Support",
+                                        "text": "24/7 helpdesk and proactive monitoring that fixes problems before your team notices them.",
+                                        "url": "#services"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "icon": "ShieldCheck",
+                                        "title": "Cybersecurity",
+                                        "text": "Firewalls, endpoint protection and staff training to keep threats and data leaks out.",
+                                        "url": "#services"
+                                    },
+                                    {
+                                        "id": 3,
+                                        "icon": "Cloud",
+                                        "title": "Cloud Solutions",
+                                        "text": "Move to Microsoft 365, AWS or Azure with a clear plan and no downtime.",
+                                        "url": "#services"
+                                    },
+                                    {
+                                        "id": 4,
+                                        "icon": "Network",
+                                        "title": "Network & Infrastructure",
+                                        "text": "Design, setup and maintenance of secure offices, servers and Wi-Fi.",
+                                        "url": "#services"
+                                    },
+                                    {
+                                        "id": 5,
+                                        "icon": "DatabaseBackup",
+                                        "title": "Backup & Recovery",
+                                        "text": "Automatic backups and tested recovery plans so one failure never stops your business.",
+                                        "url": "#services"
+                                    },
+                                    {
+                                        "id": 6,
+                                        "icon": "Lightbulb",
+                                        "title": "IT Consulting",
+                                        "text": "Practical advice on budgets, tools and growth plans, written in plain language.",
+                                        "url": "#services"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "Services": {
+                    "variants": {
+                        "WedBlissServices2": {
+                            "subtitle": "OUR SERVICES",
+                            "title": "What We Do",
+                            "description": "End-to-end IT solutions to power your business.",
+                            "services": [
+                                {
+                                    "id": 1,
+                                    "icon": "code",
+                                    "title": "Software Development",
+                                    "description": "Custom and scalable software solutions.",
+                                    "image": "/services/software-development.webp"
+                                },
+                                {
+                                    "id": 2,
+                                    "icon": "cloud",
+                                    "title": "Cloud Services",
+                                    "description": "Secure, flexible, and cost-effective cloud solutions.",
+                                    "image": "/services/cloud-services.webp"
+                                },
+                                {
+                                    "id": 3,
+                                    "icon": "shield",
+                                    "title": "Cyber Security",
+                                    "description": "Protect your business with advanced security.",
+                                    "image": "/services/cyber-security.webp"
+                                },
+                                {
+                                    "id": 4,
+                                    "icon": "headset",
+                                    "title": "IT Support",
+                                    "description": "Reliable and quick technical support.",
+                                    "image": "/services/it-support.webp"
+                                },
+                                {
+                                    "id": 5,
+                                    "icon": "consultation",
+                                    "title": "Business Consultation",
+                                    "description": "Reliable and quick technical support.",
+                                    "image": "/services/business-consultation.webp"
+                                },
+                                {
+                                    "id": 6,
+                                    "icon": "design",
+                                    "title": "UI/UX Design Service",
+                                    "description": "Reliable and quick technical support.",
+                                    "image": "/services/ui-ux-design.webp"
+                                },
+                                {
+                                    "id": 7,
+                                    "icon": "management",
+                                    "title": "Support Management",
+                                    "description": "Reliable and quick technical support.",
+                                    "image": "/services/support-management.webp"
+                                },
+                                {
+                                    "id": 8,
+                                    "icon": "research",
+                                    "title": "Market Research",
+                                    "description": "Reliable and quick technical support.",
+                                    "image": "/services/market-research.webp"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "WhatWeDo": {
+                    "variants": {
+                        "WedBlissWhatWeDo2": {
+                            "subtitle": "WHY CHOOSE US",
+                            "title": "A Better IT Partner for Your Business",
+                            "description": "We combine technology, expertise, and a customer-first approach to deliver real business value.",
+                            "image": "/other/service-3.webp",
+                            "imageAlt": "Professional IT team collaborating on a project",
+                            "features": [
+                                {
+                                    "id": 1,
+                                    "icon": "rocket",
+                                    "title": "Expert Team",
+                                    "description": "Skilled & experienced professionals."
+                                },
+                                {
+                                    "id": 2,
+                                    "icon": "layers",
+                                    "title": "Reliable Solutions",
+                                    "description": "Secure, scalable & future-ready."
+                                },
+                                {
+                                    "id": 3,
+                                    "icon": "handshake",
+                                    "title": "Client Focused",
+                                    "description": "Solutions aligned with your goals."
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Gallery": {
+                    "variants": {
+                        "WedBlissGallery2": {
+                            "subtitle": "Technology Gallery",
+                            "title1": "A closer look at",
+                            "title2": "digital solutions",
+                            "images": [
+                                {
+                                    "id": "analytics",
+                                    "image": "/other/gallery_1.webp",
+                                    "alt": "Analytics dashboard with a trend line and bar charts"
+                                },
+                                {
+                                    "id": "monitoring",
+                                    "image": "/other/gallery_4.webp",
+                                    "alt": "Monitoring dashboard with a cyan performance gauge"
+                                },
+                                {
+                                    "id": "workplace",
+                                    "image": "/other/gallery_6.webp",
+                                    "alt": "Illustration of a modern office building"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Testimonials": {
+                    "variants": {
+                        "WedBlissTestimonials2": {
+                            "subtitle": "TESTIMONIALS",
+                            "title": "What Our Clients Say",
+                            "description": "Discover how TechNova helps businesses achieve digital growth through innovative technology solutions, reliable IT services, and dedicated customer support.  ",
+                            "testimonials": [
+                                {
+                                    "id": 1,
+                                    "name": "Rohit Sharma",
+                                    "designation": "CEO, CloudBiz",
+                                    "image": "/other/avatar_rohit.webp",
+                                    "description": "TechNova delivered a reliable and scalable solution tailored to our business needs. Their technical expertise, professional approach, and consistent communication made the entire process seamless.",
+                                    "rating": 5
+                                },
+                                {
+                                    "id": 2,
+                                    "name": "Priya Verma",
+                                    "designation": "Founder, NextOps",
+                                    "image": "/other/avatar_priya.webp",
+                                    "description": "Working with TechNova has been an excellent experience. Their team understood our requirements and delivered innovative solutions that improved our digital operations. Their quick response,",
+                                    "rating": 5
+                                },
+                                {
+                                    "id": 3,
+                                    "name": "Amit Mehta",
+                                    "designation": "Director, DigitalCore",
+                                    "image": "/other/avatar_rohit.webp",
+                                    "description": "TechNova provided professional IT solutions that significantly improved our business operations. Their experienced team demonstrated excellent technical knowledge and attention to detail throughout the project.",
+                                    "rating": 5
+                                },
+                                {
+                                    "id": 4,
+                                    "name": "Neha Gupta",
+                                    "designation": "Manager, SmartTech",
+                                    "image": "/other/avatar_priya.webp",
+                                    "description": "The TechNova team impressed us with their technical expertise, innovative approach, and reliable customer support.",
+                                    "rating": 5
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Faq": {
+                    "variants": {
+                        "WedBlissFaq2": {
+                            "subtitle": "FAQ",
+                            "title": "Frequently Asked Questions",
+                            "image": "/other/service-2.webp",
+                            "imageAlt": "IT consultant helping clients with technology solutions",
+                            "faqs": [
+                                {
+                                    "id": 1,
+                                    "question": "What services do you offer?",
+                                    "answer": "We offer software development, cloud services, cyber security, IT consulting, and technical support."
+                                },
+                                {
+                                    "id": 2,
+                                    "question": "How can I get started?",
+                                    "answer": "Contact our team to discuss your requirements. We will help you find the right technology solution for your business."
+                                },
+                                {
+                                    "id": 3,
+                                    "question": "Do you provide ongoing support?",
+                                    "answer": "We provide ongoing technical support and maintenance to keep your systems running smoothly."
+                                },
+                                {
+                                    "id": 4,
+                                    "question": "Can you customize solutions for my business?",
+                                    "answer": "Yes, we develop customized IT solutions based on your business requirements, goals, and budget."
+                                },
+                                {
+                                    "id": 5,
+                                    "question": "How do you ensure data security?",
+                                    "answer": "We use security best practices, encryption, and monitoring to help protect your business data and infrastructure."
+                                },
+                                {
+                                    "id": 6,
+                                    "question": "How long does a project take?",
+                                    "answer": "Project timelines depend on the scope and complexity. Our team provides an estimated timeline after reviewing your requirements."
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Contact": {
+                    "variants": {
+                        "WedBlissContact2": {
+                            "title": "Get in Touch",
+                            "description": "Have a project or query? We'd love to hear from you.",
+                            "backgroundImage": "/other/contact.webp",
+                            "subtitle": "GET IN TOUCH",
+                            "title1": "Get in",
+                            "title2": "Touch",
+                            "contactInfo": {
+                                "phoneTitle": "Phone",
+                                "phone": "+1 00000 00000",
+                                "emailTitle": "Email",
+                                "email": "info@xyz.com",
+                                "addressTitle": "Office",
+                                "address": "3170 Rosewood Lane Unit 200, Beverly Hills, CA 90210"
+                            },
+                            "form": {
+                                "namePlaceholder": "Your Name",
+                                "emailPlaceholder": "Email Address",
+                                "messagePlaceholder": "Your Message",
+                                "buttonText": "Send Message"
+                            }
+                        }
+                    }
+                }
+            },
+            "templateComponents": {
+                "shared": {
+                    "Header": "WedBlissHeader2",
+                    "Footer": "WedBlissFooter2"
+                },
+                "pages": {
+                    "home": {
+                        "components": [
+                            {
+                                "key": "HeroSection",
+                                "component": "WedBlissHero2"
+                            },
+                            {
+                                "key": "AboutUs",
+                                "component": "WedBlissAboutUs2"
+                            },
+                            {
+                                "key": "Services",
+                                "component": "WedBlissServices2"
+                            },
+                            {
+                                "key": "WhatWeDo",
+                                "component": "WedBlissWhatWeDo2"
+                            },
+                            {
+                                "key": "Gallery",
+                                "component": "WedBlissGallery2"
+                            },
+                            {
+                                "key": "Testimonials",
+                                "component": "WedBlissTestimonials2"
+                            },
+                            {
+                                "key": "Faq",
+                                "component": "WedBlissFaq2"
+                            },
+                            {
+                                "key": "Contact",
+                                "component": "WedBlissContact2"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
