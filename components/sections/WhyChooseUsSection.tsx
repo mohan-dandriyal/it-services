@@ -152,7 +152,7 @@ export default function WhyChooseUs() {
             {/* Description */}
             <motion.p
               variants={reduceMotion ? undefined : contentVariants}
-              className="mt-3 max-w-[550px] text-base sm:text-[17px] leading-relaxed text-[#031327]"
+              className="section-copy mt-3 max-w-xl text-brand-copy"
             >
               {data.description}
             </motion.p>
@@ -160,7 +160,7 @@ export default function WhyChooseUs() {
             {/* Features */}
             <motion.div
               variants={reduceMotion ? undefined : containerVariants}
-              className="mt-7 grid gap-3 sm:grid-cols-3"
+              className="mt-7 grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3"
             >
               {data.features.map((feature) => {
                 const Icon = iconMap[feature.icon] || Rocket;
@@ -199,10 +199,7 @@ export default function WhyChooseUs() {
 
                     {/* Feature Title */}
                     <h3
-                      className="mb-1.5 text-base sm:text-[18px]
-                      font-bold leading-tight text-foreground
-                      transition-colors duration-300
-                      group-hover:text-brand-primary"
+                      className="card-title mb-1.5 text-foreground"
                     >
                       {feature.title}
                     </h3>

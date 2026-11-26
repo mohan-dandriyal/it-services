@@ -9,7 +9,6 @@ export const heroData = data.Hero.variants.WedBlissHero2;
 export const aboutData = data.AboutUs.variants.WedBlissAboutUs2;
 export const servicesData = data.Services.variants.WedBlissServices2;
 export const whatWeDoData = data.WhatWeDo.variants.WedBlissWhatWeDo2;
-export const galleryData = data.Gallery.variants.WedBlissGallery2;
 export const testimonialsData = data.Testimonials.variants.WedBlissTestimonials2;
 export const faqData = data.Faq.variants.WedBlissFaq2;
 export const contactData = data.Contact.variants.WedBlissContact2;
@@ -21,7 +20,6 @@ export type heroType = typeof heroData;
 export type aboutUsType = typeof aboutData;
 export type servicesType = typeof servicesData;
 export type whatWeDoType = typeof whatWeDoData;
-export type galleryType = typeof galleryData;
 
 export type testimonialsType = typeof testimonialsData;
 export type faqType = typeof faqData;

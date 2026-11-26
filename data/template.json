@@ -133,7 +133,7 @@
                                     "title": "Digital Solutions for",
                                     "highlight": "Growing Business",
                                     "description": "Reliable IT services, cloud, and software solutions to help your business grow faster.",
-                                    "image": "/other/hero-1.jfif",
+                                    "image": "/other/hero_banner.webp",
                                     "primaryButton": {
                                         "text": "Get Started",
                                         "href": "#contact"
@@ -149,7 +149,7 @@
                                     "title": "Transform Your Business with",
                                     "highlight": "Modern Technology",
                                     "description": "Innovative software and scalable technology solutions built for your business.",
-                                    "image": "/other/hero-1.jfif",
+                                    "image": "/services/software-development.webp",
                                     "primaryButton": {
                                         "text": "Get Started",
                                         "href": "#contact"
@@ -165,7 +165,7 @@
                                     "title": "Empowering Your",
                                     "highlight": "Digital Future",
                                     "description": "Secure cloud infrastructure and reliable IT support for seamless business operations.",
-                                    "image": "/other/hero-1.jfif",
+                                    "image": "/services/cloud-services.webp",
                                     "primaryButton": {
                                         "text": "Contact Us",
                                         "href": "#contact"
@@ -301,28 +301,28 @@
                                     "id": 5,
                                     "icon": "consultation",
                                     "title": "Business Consultation",
-                                    "description": "Reliable and quick technical support.",
+                                    "description": "Assess your business needs and plan practical technology investments.",
                                     "image": "/services/business-consultation.webp"
                                 },
                                 {
                                     "id": 6,
                                     "icon": "design",
                                     "title": "UI/UX Design Service",
-                                    "description": "Reliable and quick technical support.",
+                                    "description": "Design clear, accessible interfaces around how people use your product.",
                                     "image": "/services/ui-ux-design.webp"
                                 },
                                 {
                                     "id": 7,
                                     "icon": "management",
                                     "title": "Support Management",
-                                    "description": "Reliable and quick technical support.",
+                                    "description": "Organize support requests, track issues, and coordinate resolutions.",
                                     "image": "/services/support-management.webp"
                                 },
                                 {
                                     "id": 8,
                                     "icon": "research",
                                     "title": "Market Research",
-                                    "description": "Reliable and quick technical support.",
+                                    "description": "Understand customer needs, competitors, and market trends before you invest.",
                                     "image": "/services/market-research.webp"
                                 }
                             ]
@@ -335,8 +335,8 @@
                             "subtitle": "WHY CHOOSE US",
                             "title": "A Better IT Partner for Your Business",
                             "description": "We combine technology, expertise, and a customer-first approach to deliver real business value.",
-                            "image": "/other/service-3.webp",
-                            "imageAlt": "Professional IT team collaborating on a project",
+                            "image": "/other/what_we_do.webp",
+                            "imageAlt": "IT team reviewing a project on a laptop",
                             "features": [
                                 {
                                     "id": 1,
@@ -355,32 +355,6 @@
                                     "icon": "handshake",
                                     "title": "Client Focused",
                                     "description": "Solutions aligned with your goals."
-                                }
-                            ]
-                        }
-                    }
-                },
-                "Gallery": {
-                    "variants": {
-                        "WedBlissGallery2": {
-                            "subtitle": "Technology Gallery",
-                            "title1": "A closer look at",
-                            "title2": "digital solutions",
-                            "images": [
-                                {
-                                    "id": "analytics",
-                                    "image": "/other/gallery_1.webp",
-                                    "alt": "Analytics dashboard with a trend line and bar charts"
-                                },
-                                {
-                                    "id": "monitoring",
-                                    "image": "/other/gallery_4.webp",
-                                    "alt": "Monitoring dashboard with a cyan performance gauge"
-                                },
-                                {
-                                    "id": "workplace",
-                                    "image": "/other/gallery_6.webp",
-                                    "alt": "Illustration of a modern office building"
                                 }
                             ]
                         }
@@ -435,7 +409,7 @@
                             "subtitle": "FAQ",
                             "title": "Frequently Asked Questions",
                             "image": "/other/service-2.webp",
-                            "imageAlt": "IT consultant helping clients with technology solutions",
+                            "imageAlt": "",
                             "faqs": [
                                 {
                                     "id": 1,
@@ -492,7 +466,7 @@
                                 "namePlaceholder": "Your Name",
                                 "emailPlaceholder": "Email Address",
                                 "messagePlaceholder": "Your Message",
-                                "buttonText": "Send Message"
+                                    "buttonText": "Open email draft"
                             }
                         }
                     }
@@ -521,10 +495,6 @@
                             {
                                 "key": "WhatWeDo",
                                 "component": "WedBlissWhatWeDo2"
-                            },
-                            {
-                                "key": "Gallery",
-                                "component": "WedBlissGallery2"
                             },
                             {
                                 "key": "Testimonials",

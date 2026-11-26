@@ -2,12 +2,16 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
-import type { galleryType } from "@/types/template.type";
 import MainContainer from "../common/MainContainer";
 import SectionHeader from "../common/SectionHeader";
 
 interface GallerySectionProps {
-  data: galleryType;
+  data: {
+    subtitle: string;
+    title1: string;
+    title2: string;
+    images: { id: string | number; image: string; alt: string }[];
+  };
 }
 
 export default function GallerySection({ data }: GallerySectionProps) {

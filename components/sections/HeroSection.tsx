@@ -10,14 +10,14 @@ import {
 } from "framer-motion";
 
 import {
-  ChevronLeft,
-  ChevronRight,
+  Pause,
+  Play,
   Cloud,
   CodeXml,
   ShieldCheck,
 } from "lucide-react";
 
-import {heroData} from "@/types/template.type";
+import { heroData } from "@/types/template.type";
 
 const { slides } = heroData;
 
@@ -110,21 +110,13 @@ export default function HeroSection() {
     direction: 1,
   });
 
+  const [paused, setPaused] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
 
   const reduceMotion = useReducedMotion();
 
   const slide = slides[index];
-
-  const changeSlide = (step: number) => {
-    setSlide((previous) => ({
-      index:
-        (previous.index + step + slides.length) %
-        slides.length,
-      direction: step,
-    }));
-  };
 
   const goToSlide = (target: number) => {
     setSlide((previous) => ({
@@ -135,7 +127,7 @@ export default function HeroSection() {
 
   // Automatic slider
   useEffect(() => {
-    if (hovered || focused || reduceMotion) return;
+    if (paused || hovered || focused || reduceMotion || slides.length < 2) return;
 
     const timer = setInterval(() => {
       setSlide((previous) => ({
@@ -145,7 +137,7 @@ export default function HeroSection() {
     }, 5500);
 
     return () => clearInterval(timer);
-  }, [index, hovered, focused, reduceMotion]);
+  }, [index, paused, hovered, focused, reduceMotion]);
 
   return (
     <section
@@ -159,8 +151,8 @@ export default function HeroSection() {
           setFocused(false);
         }
       }}
-      className="relative isolate overflow-hidden rounded-b-[30px]
-      bg-brand-soft lg:min-h-[480px] xl:min-h-[550px]"
+      className="relative isolate overflow-hidden rounded-b-[30px] sm:pt-0 pt-5
+      bg-brand-soft md:min-h-[90vh]"
     >
       {/* Background gradient */}
       <div
@@ -185,7 +177,7 @@ export default function HeroSection() {
       <div
         className="relative h-[230px] overflow-hidden
         sm:h-[380px] lg:absolute lg:inset-y-0 lg:right-0
-        lg:h-full lg:w-[57%]"
+        lg:h-full lg:w-[53%]"
       >
         <div
           className="absolute inset-0 overflow-hidden
@@ -208,7 +200,7 @@ export default function HeroSection() {
             >
               <Image
                 src={slide.image}
-                alt={slide.highlight}
+                alt=""
                 fill
                 preload={index === 0}
                 sizes="(max-width: 1024px) 100vw, 57vw"
@@ -224,7 +216,7 @@ export default function HeroSection() {
         </div>
 
         {/* Floating technology icons */}
-        {floatingIcons.map(({ Icon, position, delay }, i) => (
+        {/* {floatingIcons.map(({ Icon, position, delay }, i) => (
           <motion.div
             key={i}
             initial={reduceMotion ? false : { opacity: 0, scale: 0.5 }}
@@ -265,7 +257,7 @@ export default function HeroSection() {
               aria-hidden="true"
             />
           </motion.div>
-        ))}
+        ))} */}
 
         {/* Bottom right blue curve */}
         <motion.div
@@ -291,10 +283,10 @@ export default function HeroSection() {
       {/* Main hero content */}
       <div
         className="section-shell relative z-20 flex
-        items-center py-14 lg:min-h-[480px]
+        items-center pb-20 pt-10 lg:min-h-[480px] lg:pt-14
         xl:min-h-[550px]"
       >
-        <div className="w-full lg:w-[48%]">
+        <div className="w-full lg:w-[49%]">
           <AnimatePresence initial={false} mode="wait">
             <motion.div
               key={slide.id}
@@ -314,7 +306,7 @@ export default function HeroSection() {
               {/* Heading */}
               <motion.h1
                 variants={reduceMotion ? undefined : itemVariants}
-                className="text-[clamp(2.25rem,5vw,4.25rem)] font-bold leading-[1.08] tracking-[-0.045em] text-balance text-foreground"
+                className="hero-title text-foreground"
               >
                 {slide.title}{" "}
                 <span className="text-brand-primary">
@@ -325,8 +317,7 @@ export default function HeroSection() {
               {/* Description */}
               <motion.p
                 variants={reduceMotion ? undefined : itemVariants}
-                className="mt-5 max-w-[440px] text-base leading-relaxed text-brand-copy
-                sm:text-base"
+                className="section-copy mt-5 max-w-[46ch] text-brand-copy"
               >
                 {slide.description}
               </motion.p>
@@ -377,62 +368,27 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Previous button */}
-      {/* <motion.button
-        type="button"
-        aria-label="Previous slide"
-        onClick={() => changeSlide(-1)}
-        whileHover={reduceMotion ? undefined : { scale: 1.1 }}
-        whileTap={reduceMotion ? undefined : { scale: 0.9 }}
-        className="absolute left-3 top-[115px] z-30 flex
-        h-10 w-10 -translate-y-1/2 items-center justify-center
-        rounded-full border border-white/60 bg-white/90
-        text-foreground shadow-md backdrop-blur-md
-        sm:top-[190px] lg:left-5 lg:top-1/2
-        lg:h-12 lg:w-12"
-      >
-        <ChevronLeft size={22} />
-      </motion.button> */}
-
-      {/* Next button */}
-      {/* <motion.button
-        type="button"
-        aria-label="Next slide"
-        onClick={() => changeSlide(1)}
-        whileHover={reduceMotion ? undefined : { scale: 1.1 }}
-        whileTap={reduceMotion ? undefined : { scale: 0.9 }}
-        className="absolute right-3 top-[115px] z-30 flex
-        h-10 w-10 -translate-y-1/2 items-center justify-center
-        rounded-full border border-white/60 bg-white/90
-        text-foreground shadow-md backdrop-blur-md
-        sm:top-[190px] lg:right-5 lg:top-1/2
-        lg:h-12 lg:w-12"
-      >
-        <ChevronRight size={22} />
-      </motion.button> */}
-
       {/* Pagination dots */}
       <div
         className="absolute bottom-4 left-1/2 z-30 flex
         -translate-x-1/2 items-center gap-2 rounded-full
-        bg-white/90 px-3 py-2 shadow-sm backdrop-blur-md"
+        bg-white/95 px-1 shadow-sm backdrop-blur-md"
       >
         {slides.map((item, i) => (
-          <motion.button
+          <button
             key={item.id}
             type="button"
             aria-label={`Go to slide ${i + 1}`}
             aria-current={index === i ? "true" : undefined}
             onClick={() => goToSlide(i)}
-            animate={{
-              scale: index === i ? 1.15 : 1,
-              backgroundColor:
-                index === i ? "#0757f5" : "#a8b5c7",
-            }}
-            transition={{ duration: reduceMotion ? 0 : 0.3 }}
-            className="h-2.5 w-2.5 rounded-full"
-          />
+            className="grid size-11 cursor-pointer place-items-center rounded-full"
+          >
+            <span aria-hidden="true" className={
+              index === i ? "h-2.5 w-5 rounded-full bg-brand-primary" : "size-2.5 rounded-full bg-slate-400"
+            } />
+          </button>
         ))}
+       
       </div>
     </section>
   );

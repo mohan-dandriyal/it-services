@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 import { SwiperSlide } from "swiper/react";
-import { Autoplay, A11y } from "swiper/modules";
+import { A11y } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 
 import "swiper/css";
@@ -27,7 +27,6 @@ import { testimonialsData } from "@/types/template.type";
 
 const data = testimonialsData;
 
-// Swiper's autoplay module reads the current time during initialization.
 const Swiper = dynamic(() => import("swiper/react").then((module) => module.Swiper), {
   ssr: false,
   loading: () => <div aria-hidden="true" className="min-h-56" />,
@@ -118,36 +117,16 @@ export default function TestimonialsSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           className="relative px-5 sm:px-12"
-          onFocusCapture={() => {
-            swiperRef.current?.autoplay?.stop();
-          }}
-          onBlurCapture={(event) => {
-            if (
-              !reduceMotion &&
-              !event.currentTarget.contains(event.relatedTarget)
-            ) {
-              swiperRef.current?.autoplay?.start();
-            }
-          }}
         >
           <Swiper
-            modules={[Autoplay, A11y]}
+            modules={[A11y]}
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
             }}
             slidesPerView={1}
             spaceBetween={24}
             loop={data.testimonials.length >= 4}
-            speed={reduceMotion ? 0 : 900}
-            autoplay={
-              reduceMotion
-                ? false
-                : {
-                  delay: 4500,
-                  disableOnInteraction: false,
-                  pauseOnMouseEnter: true,
-                }
-            }
+            speed={reduceMotion ? 0 : 350}
             breakpoints={{
               0: {
                 slidesPerView: 1,
@@ -197,8 +176,7 @@ export default function TestimonialsSection() {
 
                     {/* Description */}
                     <p
-                      className="mb-4 text-[17px] font-semibold
-                       text-[#031327]"
+                      className="section-copy mb-5 text-foreground"
                     >
                       {item.description}
                     </p>
@@ -214,7 +192,7 @@ export default function TestimonialsSection() {
                       >
                         <Image
                           src={item.image}
-                          alt={item.name}
+                          alt=""
                           fill
                           sizes="80px"
                           className={`object-cover ${reduceMotion
@@ -231,20 +209,19 @@ export default function TestimonialsSection() {
 
                         <div>
                           <h3
-                            className="text-[17px] sm:text-[19px] font-bold
-                          text-foreground"
+                            className="card-title text-foreground"
                           >
                             {item.name}
                           </h3>
 
-                          <p className="mt-0.5 text-[15px] text-[16px] text-[#031327]">
+                          <p className="mt-0.5 text-sm leading-relaxed text-brand-copy">
                             {item.designation}
                           </p>
                         </div>
 
                         {/* Star Rating */}
                         <div
-                          className="sm:flex items-center gap-0.5 hidden"
+                          className="flex items-center gap-0.5"
                           aria-label={`${item.rating} out of 5 stars`}
                         >
                           {Array.from({ length: 5 }).map((_, i) => (

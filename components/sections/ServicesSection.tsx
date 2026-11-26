@@ -139,8 +139,7 @@ export default function ServicesSection() {
           {/* Description */}
           <motion.p
             variants={reduceMotion ? undefined : headingVariants}
-            className="mt-2 text-base sm:text-[18px] leading-relaxed
-            text-[#031327]"
+            className="section-copy mt-3 text-brand-copy"
           >
             {services.description}
           </motion.p>
@@ -153,7 +152,7 @@ export default function ServicesSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
           className="grid auto-rows-fr grid-cols-1
-          gap-5 sm:grid-cols-2 lg:grid-cols-4"
+          gap-5 sm:grid-cols-2 xl:grid-cols-4"
         >
           {services.services.map((service) => {
             const Icon = iconMap[service.icon] || CodeXml;
@@ -177,10 +176,10 @@ export default function ServicesSection() {
               >
 
                 <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden">
-                  <Image src={service.image} alt="" fill sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="object-cover motion-safe:transition-transform motion-safe:group-hover:scale-105" />
+                  <Image src={service.image} alt="" fill sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw" className="object-cover motion-safe:transition-transform motion-safe:group-hover:scale-105" />
                 </div>
 
-                <div className="relative flex w-full flex-1 flex-col items-start p-6">
+                <div className="relative flex w-full flex-1 flex-col items-start p-5 sm:p-6">
 
                   {/* Service Icon */}
                   <motion.div
@@ -192,7 +191,7 @@ export default function ServicesSection() {
                     transition={{ duration: 0.4 }}
                     className="mb-4 flex size-12
                   shrink-0 items-center justify-center
-                  rounded-[18px] bg-[#dcecff]
+                  rounded-2xl bg-brand-soft
                   text-brand-primary transition-colors
                   duration-300 group-hover:bg-brand-primary
                   group-hover:text-white"
@@ -206,19 +205,14 @@ export default function ServicesSection() {
 
                   {/* Service Title */}
                   <h3
-                    className="mb-2 text-[17px] font-extrabold
-                  leading-tight tracking-[-0.02em]
-                  text-foreground transition-colors
-                  duration-300 group-hover:text-brand-primary
-                  xl:text-[20px]"
+                    className="card-title mb-2 text-foreground"
                   >
                     {service.title}
                   </h3>
 
                   {/* Service Description */}
                   <p
-                    className="max-w-[32ch]
-                  text-[15px] sm:text-[16px] leading-relaxed text-[#031327]"
+                    className="max-w-[34ch] text-base leading-relaxed text-brand-copy"
                   >
                     {service.description}
                   </p>

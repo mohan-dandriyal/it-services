@@ -99,7 +99,7 @@ export default function About() {
                             <motion.div
                                 animate={reduceMotion ? undefined : { y: [0, -8, 0] }}
                                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                className="absolute -bottom-5 right-2 rounded-2xl bg-indigo-600 px-5 py-3 text-white shadow-lg shadow-indigo-600/30 sm:-right-6"
+                                className="absolute -bottom-5 right-2 rounded-2xl bg-brand-primary px-5 py-3 text-white shadow-lg shadow-indigo-600/30 sm:-right-6"
                             >
                                 <p className="text-2xl font-bold leading-none">{about.experience.value}</p>
                                 <p className="mt-1 text-xs font-medium text-indigo-100">
@@ -114,10 +114,10 @@ export default function About() {
                         <motion.span
                             variants={fadeUp}
                             custom={0}
-                            initial="hidden"
+                            initial={reduceMotion ? false : "hidden"}
                             whileInView="visible"
                             viewport={{ once: true }}
-                            className="inline-flex rounded-full bg-white px-6 py-2 text-sm font-semibold text-indigo-600 shadow-md shadow-indigo-500/10 ring-1 ring-indigo-100"
+                            className="inline-flex rounded-full bg-white px-6 py-2 text-sm font-semibold text-brand-primary shadow-md shadow-indigo-500/10 ring-1 ring-indigo-100"
                         >
                             {about.subtitle}
                         </motion.span>
@@ -125,23 +125,23 @@ export default function About() {
                         <motion.h2
                             variants={fadeUp}
                             custom={1}
-                            initial="hidden"
+                            initial={reduceMotion ? false : "hidden"}
                             whileInView="visible"
                             viewport={{ once: true }}
-                            className="mt-5 text-3xl font-bold leading-tight text-[#1c1d2b] sm:text-4xl lg:text-[40px]"
+                            className="section-title mt-5 text-foreground"
                         >
                             {titleBefore}
-                            {hlIndex >= 0 && <span className="text-indigo-600">{titleHighlight}</span>}
+                            {hlIndex >= 0 && <span className="text-brand-primary">{titleHighlight}</span>}
                             {titleAfter}
                         </motion.h2>
 
                         <motion.p
                             variants={fadeUp}
                             custom={2}
-                            initial="hidden"
+                            initial={reduceMotion ? false : "hidden"}
                             whileInView="visible"
                             viewport={{ once: true }}
-                            className="mt-5 max-w-xl border-l-4 border-indigo-200 pl-4 text-base sm:text-[17px] font leading-relaxed text-[#031327]"
+                            className="section-copy mt-5 max-w-xl border-l-2 border-brand-line pl-4 text-brand-copy"
                         >
                             {about.description}
                         </motion.p>
@@ -154,7 +154,7 @@ export default function About() {
                                         key={item.id}
                                         variants={fadeUp}
                                         custom={3 + i}
-                                        initial="hidden"
+                                        initial={reduceMotion ? false : "hidden"}
                                         whileInView="visible"
                                         viewport={{ once: true }}
                                         className="group flex cursor-default items-center gap-3"
@@ -162,11 +162,11 @@ export default function About() {
                                         <motion.span
                                             whileHover={reduceMotion ? undefined : { rotate: [0, -12, 12, 0], scale: 1.12 }}
                                             transition={{ duration: 0.5 }}
-                                            className="inline-flex h-12 w-12 items-center justify-center rounded-xl text-indigo-600 transition-colors group-hover:bg-indigo-50"
+                                            className="inline-flex h-12 w-12 items-center justify-center rounded-xl text-brand-primary transition-colors group-hover:bg-brand-soft"
                                         >
                                             <Icon className="h-9 w-9" strokeWidth={2.2} />
                                         </motion.span>
-                                        <p className="sm:text-[18px] text-[17px] font-bold leading-tight text-[#1c1d2b]">
+                                        <p className="card-title text-foreground">
                                             {item.title}
                                             <br />
                                             {item.subtitle}

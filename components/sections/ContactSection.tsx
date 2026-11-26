@@ -37,7 +37,20 @@ export default function ContactSection() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus("Online submission is currently unavailable. Please email or call us.");
+    const fields = new FormData(event.currentTarget);
+    const name = String(fields.get("name") ?? "").trim();
+    const email = String(fields.get("email") ?? "").trim();
+    const message = String(fields.get("message") ?? "").trim();
+
+    if (!name || !message) {
+      setStatus("Enter your name and a message to open an email draft.");
+      return;
+    }
+
+    const subject = encodeURIComponent(`TechNova inquiry from ${name}`);
+    const body = encodeURIComponent(`${message}\r\n\r\nFrom: ${name}\r\nEmail: ${email}`);
+    window.location.href = `mailto:${contactInfo.email}?subject=${subject}&body=${body}`;
+    setStatus("If your email app opens, review and send the draft there. You can also contact us using the email link.");
   }
 
   /* Card content shared by the link and non-link versions */
@@ -47,7 +60,7 @@ export default function ContactSection() {
         <Icon size={20} aria-hidden="true" />
       </span>
       <span className="min-w-0 flex-1">
-        <span className="block text-xs font-semibold uppercase tracking-wider text-brand-cyan">{label}</span>
+        <span className="block text-sm font-semibold text-brand-cyan">{label}</span>
         <span className="mt-0.5 block break-words text-base font-semibold text-white sm:text-lg">{value}</span>
       </span>
       {isLink && (
@@ -93,8 +106,7 @@ export default function ContactSection() {
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-cyan backdrop-blur"
             >
-              <span className="size-1.5 animate-pulse rounded-full bg-brand-cyan" />
-              Get In Touch
+              Contact
             </motion.span>
 
             <motion.h2
@@ -115,7 +127,7 @@ export default function ContactSection() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="mt-4 max-w-md text-base leading-relaxed text-blue-100"
+              className="section-copy mt-4 max-w-md text-blue-100"
             >
               {description}
             </motion.p>
@@ -149,6 +161,7 @@ export default function ContactSection() {
           {/* ---------- Right: form ---------- */}
           <motion.form
             aria-labelledby="contact-form-title"
+            method="post"
             onSubmit={handleSubmit}
             initial={reduceMotion ? false : { opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -163,14 +176,14 @@ export default function ContactSection() {
               <h3 id="contact-form-title" className="text-2xl font-bold text-foreground sm:text-3xl">
                 Send us a message
               </h3>
-              <p className="mt-1.5 text-sm text-slate-500">Fill in the form and we will get back to you.</p>
+              <p className="mt-2 text-sm leading-relaxed text-brand-copy">Fill in your details to open a draft in your email app.</p>
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="grid gap-2 text-sm font-semibold text-foreground">
                 {form.namePlaceholder}
                 <span className="relative flex items-center">
-                  <input name="name" autoComplete="name" required className={fieldClass} placeholder={form.namePlaceholder} />
+                  <input name="name" autoComplete="name" required maxLength={100} className={fieldClass} />
                   <User aria-hidden="true" className={iconClass} />
                 </span>
               </label>
@@ -178,7 +191,7 @@ export default function ContactSection() {
               <label className="grid gap-2 text-sm font-semibold text-foreground">
                 {form.emailPlaceholder}
                 <span className="relative flex items-center">
-                  <input type="email" name="email" autoComplete="email" required className={fieldClass} placeholder={form.emailPlaceholder} />
+                  <input type="email" name="email" autoComplete="email" required maxLength={254} className={fieldClass} />
                   <Mail aria-hidden="true" className={iconClass} />
                 </span>
               </label>
@@ -192,7 +205,6 @@ export default function ContactSection() {
                   rows={5}
                   required
                   className={`${fieldClass} resize-y`}
-                  placeholder={form.messagePlaceholder}
                 />
                 <MessageSquare aria-hidden="true" className={`${iconClass} top-3.5`} />
               </span>

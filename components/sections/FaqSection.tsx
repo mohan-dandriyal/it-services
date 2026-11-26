@@ -24,7 +24,7 @@ export default function FaqSection() {
             sizes="(min-width: 1024px) 40vw, 100vw"
             className="-z-20 object-cover object-center"
           />
-          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-linear-to-br from-brand-navy via-brand-navy/95 to-brand-navy/70" />
+          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-linear-to-br from-brand-navy/95 via-brand-navy/90 to-brand-navy/65" />
           <p className="section-label inline-flex items-center gap-2 text-brand-cyan">
             <MessageCircle size={18} aria-hidden="true" />
             {subtitle}

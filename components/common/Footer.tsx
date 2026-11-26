@@ -55,7 +55,7 @@ export default function Footer() {
             <p className="mt-5 max-w-sm text-base leading-relaxed text-slate-300/90">{data.description}</p>
 
             <div className="mt-6">
-              <p className="text-xs font-semibold uppercase tracking-wider text-white/70">Follow Us</p>
+              <p className="text-sm font-semibold uppercase tracking-wider text-white/70">Follow Us</p>
               <div className="mt-3 flex flex-wrap gap-2.5">
                 {data.socialLinks.map((social) => (
                   <motion.a
@@ -132,7 +132,7 @@ export default function Footer() {
         </div>
 
         {/* ---------- Bottom bar ---------- */}
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-slate-400 sm:flex-row">
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm text-slate-400 sm:flex-row">
           <p className="text-center sm:text-left">{data.copyrightText}</p>
 
           <div className="flex items-center gap-4">
@@ -142,7 +142,7 @@ export default function Footer() {
             <motion.button
               type="button"
               aria-label="Back to top"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              onClick={() => window.scrollTo({ top: 0, behavior: reduceMotion ? "instant" : "smooth" })}
               whileHover={reduceMotion ? undefined : { y: -3 }}
               whileTap={{ scale: 0.92 }}
               className="ml-1 inline-flex size-9 cursor-pointer items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-colors hover:border-brand-cyan hover:bg-brand-cyan hover:text-brand-navy"

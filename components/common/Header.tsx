@@ -44,7 +44,8 @@ export default function Header() {
     const reduceMotion = useReducedMotion();
 
     // Pauses scroll-spy for a moment after a click so the active link doesn't flicker
-    const clickLock = useRef(false);
+    const clickLock = useRef<number | undefined>(undefined);
+    const menuToggle = useRef<HTMLButtonElement>(null);
 
     const { navLinks, contactButton, logoAlt, logo } = headerData;
     const { phone } = footerData.contactInfo;
@@ -57,13 +58,13 @@ export default function Header() {
     /* Scroll spy + header shadow */
     useEffect(() => {
         const ids = navLinks.map((l) => getSectionId(l.url)).filter(Boolean);
-        let ticking = false;
+        let frame: number | undefined;
 
         const update = () => {
-            ticking = false;
+            frame = undefined;
             setScrolled(window.scrollY > 12);
 
-            if (clickLock.current) return;
+            if (clickLock.current !== undefined) return;
 
             const offset = 74 + 80; // header height + breathing room
             let current = ids[0] ?? "home";
@@ -82,9 +83,8 @@ export default function Header() {
         };
 
         const onScroll = () => {
-            if (!ticking) {
-                ticking = true;
-                requestAnimationFrame(update);
+            if (frame === undefined) {
+                frame = requestAnimationFrame(update);
             }
         };
 
@@ -92,6 +92,9 @@ export default function Header() {
         window.addEventListener("scroll", onScroll, { passive: true });
         window.addEventListener("resize", onScroll);
         return () => {
+            if (frame !== undefined) cancelAnimationFrame(frame);
+            window.clearTimeout(clickLock.current);
+            clickLock.current = undefined;
             window.removeEventListener("scroll", onScroll);
             window.removeEventListener("resize", onScroll);
         };
@@ -102,7 +105,12 @@ export default function Header() {
         if (!mobileOpen) return;
         const prev = document.body.style.overflow;
         document.body.style.overflow = "hidden";
-        const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMobileOpen(false);
+        const onKey = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                setMobileOpen(false);
+                menuToggle.current?.focus();
+            }
+        };
         window.addEventListener("keydown", onKey);
         return () => {
             document.body.style.overflow = prev;
@@ -122,8 +130,10 @@ export default function Header() {
         const id = getSectionId(url);
         if (id) {
             setActiveId(id);
-            clickLock.current = true;
-            window.setTimeout(() => (clickLock.current = false), 900);
+            window.clearTimeout(clickLock.current);
+            clickLock.current = window.setTimeout(() => {
+                clickLock.current = undefined;
+            }, 900);
         }
         setMobileOpen(false);
     }, []);
@@ -232,6 +242,7 @@ export default function Header() {
 
                     {/* Mobile toggle */}
                     <motion.button
+                        ref={menuToggle}
                         type="button"
                         aria-label={mobileOpen ? "Close menu" : "Open menu"}
                         aria-expanded={mobileOpen}
