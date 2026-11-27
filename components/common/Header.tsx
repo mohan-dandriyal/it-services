@@ -100,11 +100,9 @@ export default function Header() {
         };
     }, [navLinks]);
 
-    /* Lock body scroll + close on Escape when mobile menu is open */
+    /* Close on Escape when the mobile menu is open */
     useEffect(() => {
         if (!mobileOpen) return;
-        const prev = document.body.style.overflow;
-        document.body.style.overflow = "hidden";
         const onKey = (event: KeyboardEvent) => {
             if (event.key === "Escape") {
                 setMobileOpen(false);
@@ -113,7 +111,6 @@ export default function Header() {
         };
         window.addEventListener("keydown", onKey);
         return () => {
-            document.body.style.overflow = prev;
             window.removeEventListener("keydown", onKey);
         };
     }, [mobileOpen]);
@@ -286,7 +283,7 @@ export default function Header() {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setMobileOpen(false)}
-                            className="fixed inset-0 top-[64px] -z-10 bg-slate-900/30 backdrop-blur-[2px] lg:hidden"
+                            className="absolute inset-x-0 top-full h-dvh bg-slate-900/30 backdrop-blur-[2px] lg:hidden"
                         />
 
                         <motion.div
@@ -295,7 +292,7 @@ export default function Header() {
                             initial="hidden"
                             animate="visible"
                             exit="exit"
-                            className="max-h-[calc(100vh-74px)] overflow-y-auto border-t border-slate-200 bg-white shadow-xl lg:hidden"
+                            className="absolute inset-x-0 top-full max-h-[calc(100dvh-75px)] overflow-y-auto border-t border-slate-200 bg-white shadow-xl lg:hidden"
                         >
                             <MainContainer className="py-4">
                                 <div className="flex flex-col gap-1.5">

@@ -186,9 +186,9 @@ export default function TestimonialsSection() {
 
                       {/* Client Image */}
                       <div
-                        className="relative h-16 w-16
+                        className="relative h-14 w-14
                     shrink-0 overflow-hidden rounded-full
-                    bg-[#e8edf4] xl:h-20 xl:w-20"
+                    bg-[#e8edf4] xl:h-16 xl:w-16"
                       >
                         <Image
                           src={item.image}
