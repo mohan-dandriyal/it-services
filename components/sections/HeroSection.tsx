@@ -204,7 +204,7 @@ export default function HeroSection() {
                 fill
                 preload={index === 0}
                 sizes="(max-width: 1024px) 100vw, 57vw"
-                className="object-cover object-center"
+                className="object-cover"
               />
 
               <div

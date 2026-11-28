@@ -17,7 +17,7 @@ const contactMethods = [
 
 /* Shared input style: icon sits inside on the left, soft ring on focus */
 const fieldClass =
-  "peer w-full rounded-xl border border-brand-line bg-brand-soft/50 py-3 pl-11 pr-4 text-base text-foreground placeholder:text-slate-400 transition-all duration-200 hover:border-brand-primary/40 focus:border-brand-primary focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-primary/15";
+  "peer w-full font-medium rounded-xl border border-brand-line bg-brand-soft/50 py-3 pl-11 pr-4 text-base text-foreground placeholder:text-slate-500 transition-all duration-200 hover:border-brand-primary/40 focus:border-brand-primary focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-primary/15";
 
 const iconClass =
   "pointer-events-none absolute left-4 size-[18px] text-slate-400 transition-colors duration-200 peer-focus:text-brand-primary";
@@ -61,7 +61,7 @@ export default function ContactSection() {
       </span>
       <span className="min-w-0 flex-1">
         <span className="block text-sm font-semibold text-brand-cyan">{label}</span>
-        <span className="mt-0.5 block break-words text-base font-semibold text-white sm:text-lg">{value}</span>
+        <span className="mt-0.5 block break-words text-[15px] font-medium text-white sm:text-[16px]">{value}</span>
       </span>
       {isLink && (
         <ArrowUpRight
@@ -183,7 +183,7 @@ export default function ContactSection() {
               <label className="grid gap-2 text-sm font-semibold text-foreground">
                 {form.namePlaceholder}
                 <span className="relative flex items-center">
-                  <input name="name" autoComplete="name" required maxLength={100} className={fieldClass} />
+                  <input name="name" autoComplete="name" placeholder="Enter your name" required maxLength={100} className={fieldClass} />
                   <User aria-hidden="true" className={iconClass} />
                 </span>
               </label>
@@ -191,7 +191,7 @@ export default function ContactSection() {
               <label className="grid gap-2 text-sm font-semibold text-foreground">
                 {form.emailPlaceholder}
                 <span className="relative flex items-center">
-                  <input type="email" name="email" autoComplete="email" required maxLength={254} className={fieldClass} />
+                  <input type="email" name="email" autoComplete="email" placeholder="you@example.com" required maxLength={254} className={fieldClass} />
                   <Mail aria-hidden="true" className={iconClass} />
                 </span>
               </label>
@@ -202,6 +202,7 @@ export default function ContactSection() {
               <span className="relative flex">
                 <textarea
                   name="message"
+                  placeholder="Tell us how we can help"
                   rows={5}
                   required
                   className={`${fieldClass} resize-y`}
